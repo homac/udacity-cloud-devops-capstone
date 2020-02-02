@@ -34,6 +34,14 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 2. Run in Docker:  `./run_docker.sh`
 3. Run in Kubernetes:  `./run_kubernetes.sh`
 
+### Making a prediction
+
+Run `./make_prediction.sh` after starting the application listening on localhost:8000
+
+### Uploading the docker image
+
+`./upload_docker.sh`
+
 ### Kubernetes Steps
 
 * Setup and Configure Docker locally
