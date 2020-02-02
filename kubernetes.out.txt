@@ -1,0 +1,25 @@
+$ ./run_kubernetes.sh
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+deployment.apps/udacity-cloud-devops-app created
+NAME                                        READY   STATUS              RESTARTS   AGE
+udacity-cloud-devops-app-6c68f67f58-444bb   0/1     ContainerCreating   0          0s
+udacity-cloud-devops-app-6c68f67f58-j8ghr   0/1     Terminating         0          33s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Port: 8000
+Handling connection for 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+[2020-02-02 12:57:51,647] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-02-02 12:57:51,683] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-02-02 12:57:51,683] INFO in app: Scaling Payload: 
+    CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-02-02 12:57:51,741] INFO in app: output prediction: [20.35373177134412]
+127.0.0.1 - - [02/Feb/2020 12:57:51] "POST /predict HTTP/1.1" 200 -
