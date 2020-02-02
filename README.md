@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![CircleCI](https://circleci.com/gh/homac/udacity-cloud-devops-application.svg?style=svg)](https://circleci.com/gh/homac/udacity-cloud-devops-application)
 
 ## Project Overview
 
