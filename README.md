@@ -23,6 +23,10 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 
 ---
 
+## Output files
+
+The output files are in a subfolder called `output_files/`
+
 ## Setup the Environment
 
 * Create a virtualenv and activate it
