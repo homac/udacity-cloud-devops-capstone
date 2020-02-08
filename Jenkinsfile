@@ -14,7 +14,7 @@ pipeline {
             }
             steps {
                 script {
-                    sh 'docker build . -t homac/udacity-cloud-devops-capstone'
+                    sh 'sudo docker build . -t homac/udacity-cloud-devops-capstone'
                     }
                 }
          }
@@ -26,8 +26,8 @@ pipeline {
             steps {
                 script {
                  withDockerRegistry( credentialsId: "docker_hub_login") {
-                    sh 'docker tag homac/udacity-cloud-devops-capstone:latest homac/udacity-capstone-project'
-                    sh 'docker push homac/udacity-cloud-devops-capstone'
+                    sh 'sudo docker tag homac/udacity-cloud-devops-capstone:latest homac/udacity-capstone-project'
+                    sh 'sudo docker push homac/udacity-cloud-devops-capstone'
             }
                 }
             }
