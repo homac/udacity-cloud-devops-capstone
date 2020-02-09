@@ -1,0 +1,59 @@
+$ while true; do kubectl get pods; echo "---"; sleep 1; done
+NAME                                            READY   STATUS    RESTARTS   AGE
+udacity-cloud-devops-capstone-8bdfb646b-9b9sq   1/1     Running   0          21m
+udacity-cloud-devops-capstone-8bdfb646b-btljl   1/1     Running   0          20m
+udacity-cloud-devops-capstone-8bdfb646b-rgv49   1/1     Running   0          21m
+---
+NAME                                            READY   STATUS              RESTARTS   AGE
+udacity-cloud-devops-capstone-559bd9f9-qv988    1/1     Running             0          3s
+udacity-cloud-devops-capstone-559bd9f9-rqcxb    0/1     ContainerCreating   0          0s
+udacity-cloud-devops-capstone-8bdfb646b-9b9sq   1/1     Running             0          21m
+udacity-cloud-devops-capstone-8bdfb646b-btljl   1/1     Terminating         0          21m
+udacity-cloud-devops-capstone-8bdfb646b-rgv49   1/1     Running             0          21m
+---
+NAME                                            READY   STATUS              RESTARTS   AGE
+udacity-cloud-devops-capstone-559bd9f9-qv988    1/1     Running             0          5s
+udacity-cloud-devops-capstone-559bd9f9-rqcxb    0/1     ContainerCreating   0          2s
+udacity-cloud-devops-capstone-8bdfb646b-9b9sq   1/1     Running             0          21m
+udacity-cloud-devops-capstone-8bdfb646b-btljl   0/1     Terminating         0          21m
+udacity-cloud-devops-capstone-8bdfb646b-rgv49   1/1     Running             0          21m
+---
+NAME                                            READY   STATUS              RESTARTS   AGE
+udacity-cloud-devops-capstone-559bd9f9-5kq47    0/1     ContainerCreating   0          2s
+udacity-cloud-devops-capstone-559bd9f9-qv988    1/1     Running             0          7s
+udacity-cloud-devops-capstone-559bd9f9-rqcxb    1/1     Running             0          4s
+udacity-cloud-devops-capstone-8bdfb646b-9b9sq   1/1     Running             0          21m
+udacity-cloud-devops-capstone-8bdfb646b-btljl   0/1     Terminating         0          21m
+udacity-cloud-devops-capstone-8bdfb646b-rgv49   0/1     Terminating         0          21m
+---
+NAME                                            READY   STATUS        RESTARTS   AGE
+udacity-cloud-devops-capstone-559bd9f9-5kq47    1/1     Running       0          4s
+udacity-cloud-devops-capstone-559bd9f9-qv988    1/1     Running       0          9s
+udacity-cloud-devops-capstone-559bd9f9-rqcxb    1/1     Running       0          6s
+udacity-cloud-devops-capstone-8bdfb646b-9b9sq   0/1     Terminating   0          21m
+udacity-cloud-devops-capstone-8bdfb646b-btljl   0/1     Terminating   0          21m
+udacity-cloud-devops-capstone-8bdfb646b-rgv49   0/1     Terminating   0          21m
+---
+NAME                                            READY   STATUS        RESTARTS   AGE
+udacity-cloud-devops-capstone-559bd9f9-5kq47    1/1     Running       0          7s
+udacity-cloud-devops-capstone-559bd9f9-qv988    1/1     Running       0          12s
+udacity-cloud-devops-capstone-559bd9f9-rqcxb    1/1     Running       0          9s
+udacity-cloud-devops-capstone-8bdfb646b-9b9sq   0/1     Terminating   0          21m
+udacity-cloud-devops-capstone-8bdfb646b-btljl   0/1     Terminating   0          21m
+---
+NAME                                            READY   STATUS        RESTARTS   AGE
+udacity-cloud-devops-capstone-559bd9f9-5kq47    1/1     Running       0          9s
+udacity-cloud-devops-capstone-559bd9f9-qv988    1/1     Running       0          14s
+udacity-cloud-devops-capstone-559bd9f9-rqcxb    1/1     Running       0          11s
+udacity-cloud-devops-capstone-8bdfb646b-btljl   0/1     Terminating   0          21m
+---
+NAME                                           READY   STATUS    RESTARTS   AGE
+udacity-cloud-devops-capstone-559bd9f9-5kq47   1/1     Running   0          11s
+udacity-cloud-devops-capstone-559bd9f9-qv988   1/1     Running   0          16s
+udacity-cloud-devops-capstone-559bd9f9-rqcxb   1/1     Running   0          13s
+---
+NAME                                           READY   STATUS    RESTARTS   AGE
+udacity-cloud-devops-capstone-559bd9f9-5kq47   1/1     Running   0          13s
+udacity-cloud-devops-capstone-559bd9f9-qv988   1/1     Running   0          18s
+udacity-cloud-devops-capstone-559bd9f9-rqcxb   1/1     Running   0          15s
+
