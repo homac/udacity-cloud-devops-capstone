@@ -5,7 +5,7 @@ metadata:
     service: udacity-cloud-devops-capstone
   name: udacity-cloud-devops-capstone
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       service: udacity-cloud-devops-capstone
