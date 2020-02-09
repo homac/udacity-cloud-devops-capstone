@@ -39,9 +39,11 @@ pipeline {
             }
             steps {
                 script {
-                    sh 'curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl'
-                    sh 'chmod +x ./kubectl'
-                    sh './kubectl --kubeconfig /var/lib/jenkins/.kube/eks-example get pods'
+                    withAWS(credentials:'aws_credentials') {
+                        sh 'curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl'
+                        sh 'chmod +x ./kubectl'
+                        sh './kubectl --kubeconfig /var/lib/jenkins/.kube/eks-example get pods'
+                    }
                  }
             }
         }	    
