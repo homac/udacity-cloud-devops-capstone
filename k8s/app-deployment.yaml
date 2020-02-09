@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: udacity-cloud-devops-capstone
+  name: udacity-cloud-devops-capstone
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: udacity-cloud-devops-capstone
+  template:
+    metadata:
+      labels:
+        service: udacity-cloud-devops-capstone
+    spec:
+      containers:
+      - image: homac/udacity-cloud-devops-capstone:{{GIT_COMMIT}}
+        name: udacity-cloud-devops-capstone
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+      restartPolicy: Always

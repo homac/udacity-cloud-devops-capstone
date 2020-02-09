@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry( credentialsId: "docker_hub_login") {
-                        sh 'docker tag homac/udacity-cloud-devops-capstone:latest homac/udacity-capstone-project'
+                        sh 'docker tag homac/udacity-cloud-devops-capstone:${GIT_COMMIT} homac/udacity-capstone-project'
                         sh 'docker push homac/udacity-cloud-devops-capstone'
                     }
                 }
@@ -40,9 +40,11 @@ pipeline {
             steps {
                 script {
                     withAWS(credentials:'aws_credentials') {
+                        sh 'cd k8s'
                         sh 'curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl'
                         sh 'chmod +x ./kubectl'
-                        sh './kubectl --kubeconfig /var/lib/jenkins/.kube/eks-example get pods'
+                        sh 'cat ./app-deployment.yaml | sed "s/{{GIT_COMMIT}}/$GIT_COMMIT/g" | ./kubectl apply -f -'
+                        sh './kubectl apply -f ./app-service.yaml'
                     }
                  }
             }
