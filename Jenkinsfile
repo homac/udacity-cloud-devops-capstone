@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry( credentialsId: "docker_hub_login") {
-                        sh 'docker tag homac/udacity-cloud-devops-capstone homac/udacity-capstone-project:${GIT_COMMIT}'
+                        sh 'docker tag homac/udacity-cloud-devops-capstone homac/udacity-cloud-devops-capstone:${GIT_COMMIT}'
                         sh 'docker push homac/udacity-cloud-devops-capstone:${GIT_COMMIT}'
                     }
                 }
